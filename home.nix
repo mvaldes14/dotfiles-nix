@@ -24,7 +24,7 @@
       source = /home/mvaldes/.config/home-manager/config/i3;
       target = "/home/mvaldes/.config/i3";
     };
-    ".config/i3status=rust" = {
+    ".config/i3status-rust" = {
       source = /home/mvaldes/.config/home-manager/config/i3status-rust;
       target = "/home/mvaldes/.config/i3status-rust";
     };
