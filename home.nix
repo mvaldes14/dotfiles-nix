@@ -19,6 +19,7 @@
     ".config/rofi" = {
       source = /home/mvaldes/.config/home-manager/config/rofi;
       target = "/home/mvaldes/.config/rofi";
+      executable = true;
     };
     ".config/i3" = {
       source = /home/mvaldes/.config/home-manager/config/i3;
@@ -27,6 +28,10 @@
     ".config/i3status-rust" = {
       source = /home/mvaldes/.config/home-manager/config/i3status-rust;
       target = "/home/mvaldes/.config/i3status-rust";
+    };
+    ".config/wezterm" = {
+      source = /home/mvaldes/git/dotfiles/.config/wezterm;
+      target = "/home/mvaldes/.config/wezterm";
     };
   };
 
@@ -45,12 +50,13 @@
     ./modules/shell.nix
     ./modules/nvim.nix
     ./modules/tmux.nix
-    ./modules/wezterm.nix
   ];
 
   #Pkgs installed via os
   # steam, spotify, discord, i3, rofi, lutris, obs, obsidian
   home.packages = with pkgs; [
+    # Utilities
+    deckmaster
     neovim
     neofetch
     jq
