@@ -168,8 +168,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id firefox
 exec --no-startup-id flatpak run com.discordapp.Discord
 exec --no-startup-id flatpak run org.wezfurlong.wezterm
-exec --no-startup-id flatpak run com.mozilla.Thunderbird
 exec --no-startup-id flatpak run com.spotify.Client
+exec --no-startup-id deckmaster -deck ~/git/deckmaster-config/main.deck
 exec_always picom
 exec_always sh ~/.fehbg
 
