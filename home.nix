@@ -48,7 +48,6 @@
     ./modules/git.nix
     ./modules/zsh.nix
     ./modules/shell.nix
-    ./modules/nvim.nix
     ./modules/tmux.nix
   ];
 
@@ -57,7 +56,6 @@
   home.packages = with pkgs; [
     # Utilities
     deckmaster
-    neovim
     neofetch
     jq
     tree
@@ -89,5 +87,6 @@
     # languages
     nodejs_20
     jdk20
+    cargo
   ];
 }
