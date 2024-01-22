@@ -49,6 +49,7 @@
     ./modules/zsh.nix
     ./modules/shell.nix
     ./modules/tmux.nix
+    # ./modules/nvim.nix
   ];
 
   #Pkgs installed via os

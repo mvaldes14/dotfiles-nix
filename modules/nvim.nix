@@ -1,14 +1,22 @@
 { pkgs, ... }:
+let
+  myNvim = pkgs.vimUtils.buildVimPlugin {
+    name = "mvaldes";
+    src = ../config/nvim;
+  };
+in
 {
   programs.neovim = {
-    enable = false;
+    enable = true;
     withPython3 = true;
     withRuby = true;
     withNodeJs = true;
     defaultEditor = true;
     plugins = with pkgs; [
-      vimPlugins.nvim-treesitter.withAllGrammars
-      vimPlugins.lazy-nvim
+      myNvim
     ];
+    extraLuaConfig = ''
+      require("mvaldes")
+    '';
   };
 }
