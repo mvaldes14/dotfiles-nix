@@ -90,4 +90,22 @@
     jdk20
     cargo
   ];
+
+  systemd.user.services = {
+    deckmaster = {
+      Unit = {
+        Description = "Deckmaster";
+        After = [ "network.target" ];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.deckmaster}/bin/deckmaster -deck /home/mvaldes/git/deckmaster-config/main.deck";
+        Restart = "always";
+        RestartSec = 10;
+      };
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
+    };
+  };
 }
