@@ -64,7 +64,6 @@
     ripgrep
     kubectl
     kubernetes-helm
-    k9s
     gh
     awscli2
     doppler

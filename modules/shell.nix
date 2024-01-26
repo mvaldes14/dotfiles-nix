@@ -5,6 +5,11 @@
     enableZshIntegration = true;
   };
 
+  programs.k9s = {
+    enable = true;
+    skin = "nord";
+  };
+
   programs.lazygit = {
     enable = true;
     settings = {
