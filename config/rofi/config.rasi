@@ -3,4 +3,4 @@ configuration {
  font: "JetBrainsMono NF 10";
  combi-modi: "window,drun,ssh";
 }
-@theme "/home/mvaldes/.config/rofi/themes/catpuccin-mocha.rasi"
+@theme "/home/mvaldes/.config/rofi/themes/theme.rasi"
