@@ -41,6 +41,7 @@
       tmkw = "~/.local/bin/tmux-windowkiller.sh";
       dot = "cd $DOTFILES";
       v = "nvim";
+      vwiki = "nvim ~/Obsidian/wiki/home.md";
     };
     oh-my-zsh = {
       enable = true;
