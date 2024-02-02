@@ -42,6 +42,7 @@
       dot = "cd $DOTFILES";
       v = "nvim";
       vwiki = "nvim ~/Obsidian/wiki/home.md";
+      kk = "k9s";
     };
     oh-my-zsh = {
       enable = true;
