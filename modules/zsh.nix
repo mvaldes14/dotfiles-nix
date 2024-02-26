@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
 
   programs.nnn = {
@@ -27,9 +27,9 @@
     shellAliases = {
       cat = "bat";
       lg = "lazygit";
-      chef = "cinc";
       kls = "kitchen list";
       krm = "kitchen destroy";
+      kmk = "kitchen converge";
       be = "bundle exec";
       s = "doppler run";
       tf = "terraform";
