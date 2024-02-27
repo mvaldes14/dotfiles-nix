@@ -102,7 +102,7 @@
         ExecStart = "${pkgs.deckmaster}/bin/deckmaster -deck /home/mvaldes/git/deckmaster-config/main.deck";
         Restart = "always";
         RestartSec = 10;
-        Environment = "PATH=/home/mvaldes/.nix-profile/bin";
+        Environment = "PATH=/home/mvaldes/.nix-profile/bin:/usr/bin/";
       };
       Install = {
         WantedBy = [ "default.target" ];
