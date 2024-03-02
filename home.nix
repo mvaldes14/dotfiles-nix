@@ -58,6 +58,7 @@
     # Utilities
     deckmaster
     sox
+    screenkey
     neofetch
     jq
     tree
