@@ -178,6 +178,7 @@ assign [class="firefox"]  $2
 assign [class="discord"]  $4
 assign [class="Steam"]  $3
 assign [class="Dota2"]  $3
+assign [class="obsidian"]  $3
 assign [class="obs"]  $4
 for_window [class="discord"] layout stacking
 
