@@ -56,6 +56,8 @@
   # steam, spotify, discord, i3, rofi, lutris, obs, obsidian
   home.packages = with pkgs; [
     # Utilities
+    tldr
+    htop
     deckmaster
     sox
     screenkey

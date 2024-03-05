@@ -13,9 +13,9 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 config.font = wezterm.font_with_fallback({ "JetBrainsMono NF", "FiraCode Nerd Font", "Hack" })
-config.font_size = 17
+config.font_size = 15
 config.line_height = 1.0
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.97
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
 config.color_scheme = "tokyonight_night"
@@ -30,8 +30,6 @@ config.window_padding = {
 	left = 10,
 	right = 10,
 }
-
-config.default_prog = { "tmux", "-a", "||", "tmux" }
 
 config.warn_about_missing_glyphs = false
 
