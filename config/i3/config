@@ -166,7 +166,7 @@ bindsym $mod+b exec firefox
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id firefox
-exec --no-startup-id flatpak run wezterm
+exec --no-startup-id wezterm
 exec_always picom
 exec_always sh ~/.fehbg
 
