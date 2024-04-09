@@ -1,37 +1,24 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "mvaldes";
-  home.homeDirectory = "/home/mvaldes";
+  home.username = "nixos";
+  home.homeDirectory = "/home/nixos";
   home.stateVersion = "23.05"; # Please read the comment before changing.
   home.file = {
     ".ssh/config" = {
-      source = /home/mvaldes/git/dotfiles/.ssh/config;
+      source = /home/nixos/git/dotfiles/.ssh/config;
     };
     ".local/bin" = {
-      source = /home/mvaldes/git/dotfiles/scripts;
-      target = "/home/mvaldes/.local/bin";
+      source = /home/nixos/git/dotfiles/scripts;
+      target = "/home/nixos/.local/bin";
       recursive = true;
     };
     ".aws/config" = {
-      source = /home/mvaldes/git/dotfiles/.aws/config;
-    };
-    ".config/rofi" = {
-      source = /home/mvaldes/.config/home-manager/config/rofi;
-      target = "/home/mvaldes/.config/rofi";
-      executable = true;
-    };
-    ".config/i3" = {
-      source = /home/mvaldes/.config/home-manager/config/i3;
-      target = "/home/mvaldes/.config/i3";
-    };
-    ".config/i3status-rust" = {
-      source = /home/mvaldes/.config/home-manager/config/i3status-rust;
-      target = "/home/mvaldes/.config/i3status-rust";
+      source = /home/nixos/git/dotfiles/.aws/config;
     };
     ".config/wezterm" = {
-      source = /home/mvaldes/git/dotfiles/.config/wezterm;
-      target = "/home/mvaldes/.config/wezterm";
+      source = /home/nixos/git/dotfiles/.config/wezterm;
+      target = "/home/nixos/.config/wezterm";
     };
   };
 
@@ -58,8 +45,6 @@
     # Utilities
     tldr
     htop
-    deckmaster
-    sox
     screenkey
     neofetch
     jq
@@ -72,44 +57,11 @@
     awscli2
     doppler
     ncdu
-    arandr
     nixpkgs-fmt
     stern
-    flameshot
-    clipmenu
-    #i3 apps
-    light
-    playerctl
-    xclip
-    feh
-    pasystray
-    dunst
-    lxappearance
-    i3status-rust
-    pavucontrol
-    picom
-    # languages
     nodejs_20
     jdk20
     cargo
   ];
 
-  systemd.user.services = {
-    deckmaster = {
-      Unit = {
-        Description = "Deckmaster";
-        After = [ "network.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.deckmaster}/bin/deckmaster -deck /home/mvaldes/git/deckmaster-config/main.deck";
-        Restart = "always";
-        RestartSec = 10;
-        Environment = "PATH=/home/mvaldes/.nix-profile/bin:/usr/bin/";
-      };
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
-    };
-  };
 }

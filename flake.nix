@@ -16,7 +16,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."mvaldes" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."nixos" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
       };
