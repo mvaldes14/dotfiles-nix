@@ -62,6 +62,6 @@
     nodejs_20
     jdk20
     cargo
+    dig
   ];
-
 }
