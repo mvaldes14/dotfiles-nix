@@ -41,7 +41,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = [ pkgs.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.lua52Packages.luarocks pkgs.gnumake pkgs.clang];
+  environment.systemPackages = [ pkgs.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.lua52Packages.luarocks pkgs.gnumake pkgs.clang pkgs.vlc];
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   time.timeZone = "America/Chicago";
