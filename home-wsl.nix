@@ -59,11 +59,13 @@
     ncdu
     nixpkgs-fmt
     stern
+    glow
+    dig
+
+    # languages
     nodejs_20
     jdk20
     cargo
-    glow
-    dig
   ];
 
 }

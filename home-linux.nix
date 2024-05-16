@@ -16,19 +16,19 @@
     ".aws/config" = {
       source = /home/mvaldes/git/dotfiles/.aws/config;
     };
-    ".config/rofi" = {
-      source = /home/mvaldes/.config/home-manager/config/rofi;
-      target = "/home/mvaldes/.config/rofi";
-      executable = true;
-    };
-    ".config/i3" = {
-      source = /home/mvaldes/.config/home-manager/config/i3;
-      target = "/home/mvaldes/.config/i3";
-    };
-    ".config/i3status-rust" = {
-      source = /home/mvaldes/.config/home-manager/config/i3status-rust;
-      target = "/home/mvaldes/.config/i3status-rust";
-    };
+    # ".config/rofi" = {
+    #   source = /home/mvaldes/.config/home-manager/config/rofi;
+    #   target = "/home/mvaldes/.config/rofi";
+    #   executable = true;
+    # };
+    # ".config/i3" = {
+    #   source = /home/mvaldes/.config/home-manager/config/i3;
+    #   target = "/home/mvaldes/.config/i3";
+    # };
+    # ".config/i3status-rust" = {
+    #   source = /home/mvaldes/.config/home-manager/config/i3status-rust;
+    #   target = "/home/mvaldes/.config/i3status-rust";
+    # };
     ".config/wezterm" = {
       source = /home/mvaldes/git/dotfiles/.config/wezterm;
       target = "/home/mvaldes/.config/wezterm";
@@ -71,22 +71,24 @@
     awscli2
     doppler
     ncdu
-    arandr
     nixpkgs-fmt
     stern
     flameshot
-    clipmenu
+
     #i3 apps
-    light
-    playerctl
-    xclip
-    feh
-    pasystray
-    dunst
-    lxappearance
-    i3status-rust
-    pavucontrol
-    picom
+    # light
+    # arandr
+    # clipmenu
+    # playerctl
+    # xclip
+    # feh
+    # pasystray
+    # dunst
+    # lxappearance
+    # i3status-rust
+    # pavucontrol
+    # picom
+
     # languages
     nodejs_20
     jdk20
