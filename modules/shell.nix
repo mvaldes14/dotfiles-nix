@@ -1,4 +1,4 @@
-{ pkgs, lib,  ... }:
+{ pkgs, lib, ... }:
 {
   programs.zoxide = {
     enable = true;
@@ -7,7 +7,7 @@
 
   programs.k9s = {
     enable = true;
-    skin = "nord";
+    skins.skin = "nord";
   };
 
   programs.lazygit = {
@@ -56,7 +56,7 @@
 
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    enableZshIntegration = true;
     icons = true;
     git = true;
   };
