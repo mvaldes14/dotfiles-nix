@@ -20,8 +20,6 @@
     dotDir = ".config/zsh";
     syntaxHighlighting.enable = true;
     initExtra = ''
-      bindkey -s "^s" "tmux-sessionizer.sh\n"
-      bindkey -s "^e" "nnn\n"
       source $HOME/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
     '';
     shellAliases = {
