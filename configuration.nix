@@ -6,7 +6,9 @@
 # https://github.com/nix-community/NixOS-WSL
 
 { config, lib, pkgs, ... }:
-
+let
+unstable = import <nixpkgs-unstable> {};
+in
 {
   imports = [
     # include NixOS-WSL modules
@@ -41,7 +43,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = [ pkgs.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.lua52Packages.luarocks pkgs.gnumake pkgs.clang];
+  environment.systemPackages = [ unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.lua52Packages.luarocks pkgs.gnumake pkgs.clang];
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   time.timeZone = "America/Chicago";
