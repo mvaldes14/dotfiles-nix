@@ -21,6 +21,7 @@
     syntaxHighlighting.enable = true;
     initExtra = ''
       source $HOME/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+      source $HOME/git/dotfiles/.config/zsh/zsh_functions
     '';
     shellAliases = {
       cat = "bat";
