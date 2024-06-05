@@ -126,4 +126,17 @@
       };
     };
   };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      auto_sync = true;
+      sync_frequency = "5m";
+      sync_address = "http://atuin.local.net";
+      search_mode = "fuzzy";
+      search_mode_shell_up_key_binding = "fuzzy";
+      keymap_mode = "vim-normal";
+    };
+  };
 }
