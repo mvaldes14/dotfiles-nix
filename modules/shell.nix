@@ -136,7 +136,7 @@
       sync_address = "http://atuin.local.net";
       search_mode = "fuzzy";
       search_mode_shell_up_key_binding = "fuzzy";
-      keymap_mode = "vim-normal";
+      keymap_mode = "vim-insert";
     };
   };
 }
