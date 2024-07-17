@@ -7,7 +7,7 @@
 
 { config, lib, pkgs, ... }:
 let
-unstable = import <nixpkgs-unstable> {};
+  unstable = import <nixpkgs-unstable> { };
 in
 {
   imports = [
@@ -19,17 +19,17 @@ in
   wsl.defaultUser = "nixos";
   wsl.docker-desktop.enable = true;
   wsl.extraBin = with pkgs; [
-      # Binaries for Docker Desktop wsl-distro-proxy
-      { src = "${coreutils}/bin/mkdir"; }
-      { src = "${coreutils}/bin/cat"; }
-      { src = "${coreutils}/bin/whoami"; }
-      { src = "${coreutils}/bin/ls"; }
-      { src = "${busybox}/bin/addgroup"; }
-      { src = "${su}/bin/groupadd"; }
-      { src = "${su}/bin/usermod"; }
-    ];
+    # Binaries for Docker Desktop wsl-distro-proxy
+    { src = "${coreutils}/bin/mkdir"; }
+    { src = "${coreutils}/bin/cat"; }
+    { src = "${coreutils}/bin/whoami"; }
+    { src = "${coreutils}/bin/ls"; }
+    { src = "${busybox}/bin/addgroup"; }
+    { src = "${su}/bin/groupadd"; }
+    { src = "${su}/bin/usermod"; }
+  ];
 
-   virtualisation.docker = {
+  virtualisation.docker = {
     enable = true;
     enableOnBoot = true;
     autoPrune.enable = true;
@@ -43,7 +43,7 @@ in
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = [ unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.lua52Packages.luarocks pkgs.gnumake pkgs.clang];
+  environment.systemPackages = [ unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.gnumake pkgs.clang ];
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   time.timeZone = "America/Chicago";
