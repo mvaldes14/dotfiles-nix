@@ -76,22 +76,21 @@
     flameshot
 
     #i3 apps
-    # light
-    # arandr
-    # clipmenu
-    # playerctl
-    # xclip
-    # feh
-    # pasystray
-    # dunst
-    # lxappearance
-    # i3status-rust
-    # pavucontrol
-    # picom
+    light
+    arandr
+    clipmenu
+    playerctl
+    xclip
+    feh
+    pasystray
+    dunst
+    lxappearance
+    i3status-rust
+    pavucontrol
+    picom
 
     # languages
     nodejs_20
-    jdk20
     cargo
   ];
 }
