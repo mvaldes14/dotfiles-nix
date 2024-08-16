@@ -14,21 +14,21 @@
       recursive = true;
     };
     ".aws/config" = {
-      source = /home/mvaldes/git/dotfiles/.aws/config;
+     source = /home/mvaldes/git/dotfiles/.aws/config;
     };
-    # ".config/rofi" = {
-    #   source = /home/mvaldes/.config/home-manager/config/rofi;
-    #   target = "/home/mvaldes/.config/rofi";
-    #   executable = true;
-    # };
-    # ".config/i3" = {
-    #   source = /home/mvaldes/.config/home-manager/config/i3;
-    #   target = "/home/mvaldes/.config/i3";
-    # };
-    # ".config/i3status-rust" = {
-    #   source = /home/mvaldes/.config/home-manager/config/i3status-rust;
-    #   target = "/home/mvaldes/.config/i3status-rust";
-    # };
+    ".config/rofi" = {
+      source = /home/mvaldes/git/dotfiles-nix/config/rofi;
+      target = "/home/mvaldes/.config/rofi";
+      executable = true;
+    };
+    ".config/i3" = {
+      source = /home/mvaldes/git/dotfiles-nix/config/i3;
+      target = "/home/mvaldes/.config/i3";
+    };
+    ".config/i3status-rust" = {
+      source = /home/mvaldes/git/dotfiles-nix/config/i3status-rust;
+      target = "/home/mvaldes/.config/i3status-rust";
+    };
     ".config/wezterm" = {
       source = /home/mvaldes/git/dotfiles/.config/wezterm;
       target = "/home/mvaldes/.config/wezterm";
