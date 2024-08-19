@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixos-unstable> { };
+in
 {
   home.username = "mvaldes";
   home.homeDirectory = "/home/mvaldes";
@@ -49,7 +51,7 @@
     ./modules/zsh.nix
     ./modules/shell.nix
     ./modules/tmux.nix
-    # ./modules/nvim.nix
+    #./modules/nvim.nix
   ];
 
   #Pkgs installed via os
@@ -74,6 +76,7 @@
     nixpkgs-fmt
     stern
     flameshot
+    unstable.neovim
 
     #i3 apps
     light
