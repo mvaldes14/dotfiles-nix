@@ -16,13 +16,9 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."nixos" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home-wsl.nix ];
-      };
       homeConfigurations."mvaldes" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home-linux.nix ];
+        modules = [ ./home.nix ];
       };
     };
 }
