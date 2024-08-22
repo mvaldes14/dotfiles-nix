@@ -6,7 +6,7 @@ set $mod Mod4
 font pango:Hack 10
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -159,14 +159,14 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+space exec rofi -show combi --sidebar-mode -show-icons -config ~/.config/rofi/config.rasi
 
 #Custom app shortcuts
-bindsym $mod+b exec firefox
+bindsym $mod+b exec  
 # bindsym $mod+p exec ~/git/dotfiles/i3/monitors.sh auto
 
 #Wallpapers and startup apps
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
-exec --no-startup-id firefox
-exec --no-startup-id wezterm
+exec --no-startup-id flatpak run com.brave.Browser
+exec --no-startup-id flatpak run com.core447.StreamController
 exec_always picom
 exec_always sh ~/.fehbg
 

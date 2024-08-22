@@ -16,7 +16,7 @@ in
       recursive = true;
     };
     ".aws/config" = {
-     source = /home/mvaldes/git/dotfiles/.aws/config;
+      source = /home/mvaldes/git/dotfiles/.aws/config;
     };
     ".config/rofi" = {
       source = /home/mvaldes/git/dotfiles-nix/config/rofi;

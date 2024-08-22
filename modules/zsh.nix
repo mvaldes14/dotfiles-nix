@@ -42,7 +42,6 @@
       v = "nvim";
       vwiki = "pushd ~/Obsidian/wiki && nvim";
       kk = "k9s";
-      ollama = "ollama.exe";
     };
     oh-my-zsh = {
       enable = true;
