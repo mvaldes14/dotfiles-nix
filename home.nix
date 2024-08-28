@@ -77,6 +77,8 @@ in
     stern
     flameshot
     unstable.neovim
+    docker-compose
+    dig
 
     #i3 apps
     light
