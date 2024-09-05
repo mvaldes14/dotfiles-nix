@@ -30,17 +30,10 @@ block = "disk_space"
 block = "net"
 
 [[block]]
-block = "temperature"
-
-[[block]]
 block = "sound"
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
-
-[[block]]
-block = "nvidia_gpu"
-interval = 5
 
 [[block]]
 block = "time"

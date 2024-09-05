@@ -1,11 +1,8 @@
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { };
-in
+{pkgs, ...}: 
 {
   home.username = "mvaldes";
   home.homeDirectory = "/home/mvaldes";
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "24.05";
   home.file = {
     ".ssh/config" = {
       source = /home/mvaldes/git/dotfiles/.ssh/config;
@@ -76,27 +73,8 @@ in
     nixpkgs-fmt
     stern
     flameshot
-    unstable.neovim
     docker-compose
     dig
-
-    #i3 apps
-    light
-    arandr
-    clipmenu
-    playerctl
-    xclip
-    feh
-    pasystray
-    dunst
-    lxappearance
-    i3status-rust
-    pavucontrol
-    picom
-
-    # languages
-    nodejs_20
-    cargo
   ];
 }
 
