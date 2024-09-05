@@ -3,13 +3,14 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-let 
-  unstable = import <nixos-unstable>{};
+let
+  unstable = import <nixos-unstable> { };
   home-config = import ./home.nix;
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       <home-manager/nixos>
     ];
@@ -62,8 +63,8 @@ in
 
   # i3wm
   services.xserver.windowManager.i3 = {
-  enable = true;
-  extraPackages = [ pkgs.i3status-rust ];
+    enable = true;
+    extraPackages = [ pkgs.i3status-rust ];
   };
 
   # Enable CUPS to print documents.
@@ -93,8 +94,9 @@ in
     isNormalUser = true;
     description = "mvaldes";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -125,6 +127,7 @@ in
     pasystray
     gnumake
     clang
+    fira-code-nerdfont
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -134,6 +137,7 @@ in
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.zsh.enable = true;
 
   # List services that you want to enable:
 

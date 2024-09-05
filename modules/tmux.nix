@@ -28,18 +28,19 @@ in
     enable = true;
     plugins = with pkgs; [
       tmuxPlugins.sensible
-      tmuxPlugins.mode-indicator
+      # tmuxPlugins.mode-indicator
       tmuxPlugins.resurrect
       tmuxPlugins.yank
       tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.copycat
       tmuxPlugins.continuum
       tmux-sessionx
+      tmuxPlugins.catppuccin
       tmux-tokyo-night
     ];
+    # run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
     extraConfig = ''
       ${builtins.readFile ../config/tmux/tmux.conf}
-      run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
     '';
   };
 }

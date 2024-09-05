@@ -12,11 +12,6 @@ bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
 
 [[block]]
-block = "music"
-format = " $icon {$combo.str(max_w:20) $play $next |}"
-player = "spotify"
-
-[[block]]
 block = "cpu"
 
 [[block]]
@@ -28,12 +23,6 @@ block = "disk_space"
 
 [[block]]
 block = "net"
-
-[[block]]
-block = "sound"
-[[block.click]]
-button = "left"
-cmd = "pavucontrol"
 
 [[block]]
 block = "time"

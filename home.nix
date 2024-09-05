@@ -1,4 +1,4 @@
-{pkgs, ...}: 
+{ pkgs, ... }:
 {
   home.username = "mvaldes";
   home.homeDirectory = "/home/mvaldes";
@@ -75,6 +75,8 @@
     flameshot
     docker-compose
     dig
+    feh
+    bat
   ];
 }
 

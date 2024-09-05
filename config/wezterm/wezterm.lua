@@ -12,7 +12,7 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():maximize()
 end)
 
-config.font = wezterm.font_with_fallback({ "Fira Code NF", "FiraCode Nerd Font", "Hack" })
+config.font = wezterm.font_with_fallback({ "FiraCode NF", "FiraCode Nerd Font" })
 config.font_size = 15
 config.line_height = 1.0
 config.window_background_opacity = 0.97
