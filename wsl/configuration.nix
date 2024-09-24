@@ -7,12 +7,14 @@
 
 { config, lib, pkgs, ... }:
 let
-  unstable = import <nixpkgs-unstable> { };
+  unstable = import <nixos-unstable> { };
+  home-config = import ./home-wsl.nix;
 in
 {
   imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules>
+    <home-manager/nixos>
   ];
 
   wsl.enable = true;
@@ -49,4 +51,6 @@ in
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
   nixpkgs.config.allowUnfree = true;
+
+  home-manager.users.nixos= home-config;
 }

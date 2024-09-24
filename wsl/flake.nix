@@ -14,11 +14,15 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+         nixos-system = import ./configuration.nix;
     in
     {
-      homeConfigurations."mvaldes" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."nixos" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./home-wsl.nix ];
       };
+     nixosConfigurations = {
+      x86_64-linux = nixos-system "x86_64-linux";
+    };
     };
 }

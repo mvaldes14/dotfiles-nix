@@ -20,6 +20,11 @@
       source = /home/nixos/git/dotfiles/.config/wezterm;
       target = "/home/nixos/.config/wezterm";
     };
+    ".config/nvim" = {
+      source = /home/nixos/git/dotfiles/.config/nvim;
+      target = "/home/nixos/.config/nvim";
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
@@ -32,10 +37,10 @@
   programs.zsh.enable = true;
 
   imports = [
-    ./modules/git.nix
-    ./modules/zsh.nix
-    ./modules/shell.nix
-    ./modules/tmux.nix
+    /etc/nixos/modules/git.nix
+    /etc/nixos/modules/zsh.nix
+    /etc/nixos/modules/shell.nix
+    /etc/nixos/modules/tmux.nix
     # ./modules/nvim.nix
   ];
 
