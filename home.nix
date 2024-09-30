@@ -77,6 +77,7 @@
     dig
     feh
     bat
+    wsl-open
   ];
 }
 
