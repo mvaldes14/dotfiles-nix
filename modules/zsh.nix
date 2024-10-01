@@ -40,7 +40,7 @@
       tmkw = "~/.local/bin/tmux-windowkiller.sh";
       dot = "cd $DOTFILES";
       v = "nvim";
-      vwiki = "pushd /mnt/c/Users/migue/Documents/wiki/Dashboard.md";
+      vwiki = "nvim /mnt/c/Users/migue/Documents/wiki/Dashboard.md";
       kk = "k9s";
     };
     oh-my-zsh = {
