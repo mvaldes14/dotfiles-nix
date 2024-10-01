@@ -45,12 +45,12 @@ in
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = [ unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.gnumake pkgs.clang ];
+  environment.systemPackages = [ unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.gnumake pkgs.clang pkgs.lua-language-server ];
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
   nixpkgs.config.allowUnfree = true;
 
-  home-manager.users.nixos= home-config;
+  home-manager.users.nixos = home-config;
 }
