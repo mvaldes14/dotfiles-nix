@@ -137,6 +137,8 @@
       search_mode = "fuzzy";
       search_mode_shell_up_key_binding = "fuzzy";
       keymap_mode = "vim-insert";
+      style = "compact";
+      secrets_filter = true;
     };
   };
 }
