@@ -30,7 +30,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     LC_ALL = "C.UTF-8";
-    PATH = "$PATH:$HOME/.local/bin:/mnt/c/Users/migue/AppData/Local/Microsoft/WinGet/Packages/equalsraf.win32yank_Microsoft.Winget.Source_8wekyb3d8bbwe";
+    PATH = "$PATH:$HOME/.local/bin:/mnt/c/Users/migue/AppData/Local/Microsoft/WinGet/Packages/equalsraf.win32yank_Microsoft.Winget.Source_8wekyb3d8bbwe:/mnt/c/Users/migue/AppData/Local/Programs/Ollama";
   };
 
   programs.home-manager.enable = true;
@@ -66,6 +66,7 @@
     stern
     glow
     dig
+    wsl-open
 
     # languages
     nodejs_20

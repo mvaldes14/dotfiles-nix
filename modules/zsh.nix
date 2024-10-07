@@ -39,6 +39,7 @@
       v = "nvim";
       vwiki = "pushd /mnt/c/Users/migue/Documents/wiki && nvim";
       kk = "k9s";
+      ollama = "ollama.exe";
     };
     oh-my-zsh = {
       enable = true;
