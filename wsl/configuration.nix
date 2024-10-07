@@ -20,6 +20,7 @@ in
   wsl.enable = true;
   wsl.defaultUser = "nixos";
   wsl.docker-desktop.enable = true;
+  wsl.interop.includePath = true;
   wsl.extraBin = with pkgs; [
     # Binaries for Docker Desktop wsl-distro-proxy
     { src = "${coreutils}/bin/mkdir"; }

@@ -30,7 +30,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     LC_ALL = "C.UTF-8";
-    PATH = "$PATH:$HOME/.local/bin:/mnt/c/Users/migue/AppData/Local/Microsoft/WinGet/Packages/equalsraf.win32yank_Microsoft.Winget.Source_8wekyb3d8bbwe:/mnt/c/Users/migue/AppData/Local/Programs/Ollama";
+    PATH = "$PATH:$HOME/.local/bin";
   };
 
   programs.home-manager.enable = true;
