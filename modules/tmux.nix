@@ -11,23 +11,13 @@ let
         sha256 = "sha256-TO5OG7lqcN2sKRtdF7DgFeZ2wx9O1FVh1MSp+6EoYxc=";
       };
   };
-  tokyo-night = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tokyo-night";
-    version = "unstable-2023-01-06";
-    src = pkgs.fetchFromGitHub {
-      owner = "janoamaral";
-      repo = "tokyo-night-tmux";
-      rev = "master";
-      sha256 = "sha256-3rMYYzzSS2jaAMLjcQoKreE0oo4VWF9dZgDtABCUOtY=";
-    };
-  };
 in
 {
   programs.tmux = {
     enable = true;
     plugins = with pkgs.tmuxPlugins; [
       sensible
-      # tmuxPlugins.mode-indicator
+      mode-indicator
       resurrect
       yank
       vim-tmux-navigator
@@ -35,9 +25,8 @@ in
       continuum
       tmux-sessionx
     ];
-    # run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
     extraConfig = ''
-      run-shell /nix/store/vc02gww5zqszldw0rmq1jh1iz4w4js1l-tmuxplugin-tokyo-night-unstable-2023-01-06/share/tmux-plugins/tokyo-night/tokyo-night.tmux
+      run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
       ${builtins.readFile ../config/tmux/tmux.conf}
     '';
   };
