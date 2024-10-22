@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "nixos";
@@ -70,7 +70,7 @@
 
     # languages
     nodejs_20
-    jdk20
+    jdk
     cargo
     nixd
   ];
