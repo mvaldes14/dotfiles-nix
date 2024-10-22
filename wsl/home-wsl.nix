@@ -67,6 +67,7 @@
     glow
     dig
     wsl-open
+    openai-whisper
 
     # languages
     nodejs_20
