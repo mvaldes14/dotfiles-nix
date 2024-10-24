@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "24.05"; # Please read the comment before changing.
@@ -62,19 +60,14 @@
     awscli2
     doppler
     ncdu
-    nixpkgs-fmt
     stern
     glow
     dig
     wsl-open
-    openai-whisper
-    alejandra
 
     # languages
     nodejs_20
     jdk
     cargo
-    nixd
   ];
-
 }
