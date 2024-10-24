@@ -68,6 +68,7 @@
     dig
     wsl-open
     openai-whisper
+    alejandra
 
     # languages
     nodejs_20
