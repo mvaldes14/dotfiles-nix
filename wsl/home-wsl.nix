@@ -39,7 +39,6 @@
     /etc/nixos/modules/zsh.nix
     /etc/nixos/modules/shell.nix
     /etc/nixos/modules/tmux.nix
-    # ./modules/nvim.nix
   ];
 
   #Pkgs installed via os
