@@ -1,11 +1,9 @@
-{ pkgs, ... }:
-{
-
+{pkgs, ...}: {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
     defaultCommand = "rg --files --no-ignore --hiden --follow --glob '!.git/*'";
-    defaultOptions = [ "--height 50%" "--ansi" ];
+    defaultOptions = ["--height 50%" "--ansi"];
   };
 
   programs.zsh = {
@@ -40,10 +38,12 @@
       vwiki = "pushd /mnt/c/Users/migue/Documents/wiki && nvim";
       kk = "k9s";
       ollama = "ollama.exe";
+      snt = "sudo nixos-switch test --impure";
+      sns = "sudo nixos-switch switch --impure";
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "aws" "vi-mode" "kubectl" "fzf" ];
+      plugins = ["git" "aws" "vi-mode" "kubectl" "fzf"];
     };
     sessionVariables = {
       TERM = "screen-256color";
@@ -64,5 +64,4 @@
       }
     ];
   };
-
 }

@@ -1,19 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { };
-  home-config = import ./home.nix;
-in
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  config,
+  pkgs,
+  ...
+}: let
+  unstable = import <nixos-unstable> {};
+  home-config = import ./home.nix;
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -64,7 +64,7 @@ in
   # i3wm
   services.xserver.windowManager.i3 = {
     enable = true;
-    extraPackages = [ pkgs.i3status-rust ];
+    extraPackages = [pkgs.i3status-rust];
   };
 
   # Enable CUPS to print documents.
@@ -93,7 +93,7 @@ in
   users.users.mvaldes = {
     isNormalUser = true;
     description = "mvaldes";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
@@ -113,7 +113,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -160,5 +160,4 @@ in
 
   # For VMWare functionality
   virtualisation.vmware.guest.enable = true;
-
 }

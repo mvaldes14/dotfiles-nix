@@ -1,11 +1,9 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   myNvim = pkgs.vimUtils.buildVimPlugin {
     name = "mvaldes";
     src = ../config/nvim;
   };
-in
-{
+in {
   programs.neovim = {
     enable = true;
     withPython3 = true;

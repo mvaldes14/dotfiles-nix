@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
@@ -14,19 +17,18 @@
     enable = true;
     settings = {
       os.editorPreset = "nvim";
-      gui.theme =
-        {
-          activeBorderColor = [ "#89b4fa" "bold" ];
-          inactiveBorderColor = [ "#a6adc8" "bold" ];
-          optionsTextColor = [ "#89b4fa" ];
-          selectedLineBgColor = [ "#313244" ];
-          selectedRangeBgColor = [ "#313244" ];
-          cherryPickedCommitBgColor = [ "#45475a" ];
-          cherryPickedCommitFgColor = [ "#89b4fa" ];
-          unstagedChangesColor = [ "#f38ba8" ];
-          defaultFgColor = [ "#cdd6f4" ];
-          searchingActiveBorderColor = [ "#f9e2af" ];
-        };
+      gui.theme = {
+        activeBorderColor = ["#89b4fa" "bold"];
+        inactiveBorderColor = ["#a6adc8" "bold"];
+        optionsTextColor = ["#89b4fa"];
+        selectedLineBgColor = ["#313244"];
+        selectedRangeBgColor = ["#313244"];
+        cherryPickedCommitBgColor = ["#45475a"];
+        cherryPickedCommitFgColor = ["#89b4fa"];
+        unstagedChangesColor = ["#f38ba8"];
+        defaultFgColor = ["#cdd6f4"];
+        searchingActiveBorderColor = ["#f9e2af"];
+      };
       git = {
         paging = {
           colorArg = "always";
@@ -101,7 +103,7 @@
       terraform = {
         format = "[💠 $version]($style) ";
         disabled = false;
-        detect_folders = [ ".terraform" ];
+        detect_folders = [".terraform"];
       };
       golang = {
         symbol = " ";
@@ -115,11 +117,11 @@
       };
       ocaml = {
         format = "[🐫 $version](bold yellow) ";
-        detect_files = [ "dune" ];
+        detect_files = ["dune"];
       };
       lua = {
         format = "[🌙 $version](bold white) ";
-        detect_files = [ "lua" ];
+        detect_files = ["lua"];
       };
       nix_shell = {
         format = "[❄️ $name](bold white) ";

@@ -1,9 +1,9 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "sessionx";
     version = "unstable-2023-01-06";
-    src = pkgs.fetchFromGitHub
+    src =
+      pkgs.fetchFromGitHub
       {
         owner = "omerxx";
         repo = "tmux-sessionx";
@@ -11,8 +11,7 @@ let
         sha256 = "sha256-TO5OG7lqcN2sKRtdF7DgFeZ2wx9O1FVh1MSp+6EoYxc=";
       };
   };
-in
-{
+in {
   programs.tmux = {
     enable = true;
     plugins = with pkgs.tmuxPlugins; [

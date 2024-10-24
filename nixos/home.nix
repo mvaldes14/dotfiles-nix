@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.username = "mvaldes";
   home.homeDirectory = "/home/mvaldes";
   home.stateVersion = "24.05";
@@ -80,4 +79,3 @@
     wsl-open
   ];
 }
-

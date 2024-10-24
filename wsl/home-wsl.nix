@@ -2,6 +2,7 @@
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.enableNixpkgsReleaseCheck = false;
   home.file = {
     ".ssh/config" = {
       source = /home/nixos/git/dotfiles/.ssh/config;
