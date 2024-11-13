@@ -34,7 +34,7 @@
       tmks = "~/.local/bin/tmux-sessionkiller.sh";
       tmkw = "~/.local/bin/tmux-windowkiller.sh";
       dot = "cd $DOTFILES";
-      v = "doppler run -- nvim";
+      v = "doppler setup -p homelab >/dev/null && doppler run -- nvim";
       vwiki = "pushd /mnt/c/Users/migue/Documents/wiki && nvim";
       kk = "k9s";
       ollama = "ollama.exe";
