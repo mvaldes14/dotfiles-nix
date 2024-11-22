@@ -19,11 +19,11 @@
       source = /home/nixos/git/dotfiles/.config/wezterm;
       target = "/home/nixos/.config/wezterm";
     };
-    ".config/nvim" = {
-      source = /home/nixos/git/dotfiles/.config/nvim;
-      target = "/home/nixos/.config/nvim";
-      recursive = true;
-    };
+    # ".config/nvim" = {
+    #   source = /home/nixos/git/dotfiles/.config/nvim;
+    #   target = "/home/nixos/.config/nvim";
+    #   recursive = true;
+    # };
   };
 
   home.sessionVariables = {
