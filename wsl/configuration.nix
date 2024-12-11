@@ -34,7 +34,7 @@ in {
     autoPrune.enable = true;
   };
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
   nix.settings.experimental-features = ["nix-command" "flakes"];
   environment.systemPackages = [unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.gnumake pkgs.clang pkgs.nixd pkgs.alejandra pkgs.openai-whisper];
   programs.zsh.enable = true;
