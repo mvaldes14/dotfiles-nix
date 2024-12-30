@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{  pkgs, ... }: {
   home.username = "mvaldes";
   home.homeDirectory = "/home/mvaldes";
   home.stateVersion = "24.05";
@@ -13,19 +13,6 @@
     };
     ".aws/config" = {
       source = /home/mvaldes/git/dotfiles/.aws/config;
-    };
-    ".config/rofi" = {
-      source = /home/mvaldes/git/dotfiles-nix/config/rofi;
-      target = "/home/mvaldes/.config/rofi";
-      executable = true;
-    };
-    ".config/i3" = {
-      source = /home/mvaldes/git/dotfiles-nix/config/i3;
-      target = "/home/mvaldes/.config/i3";
-    };
-    ".config/i3status-rust" = {
-      source = /home/mvaldes/git/dotfiles-nix/config/i3status-rust;
-      target = "/home/mvaldes/.config/i3status-rust";
     };
     ".config/wezterm" = {
       source = /home/mvaldes/git/dotfiles/.config/wezterm;
@@ -43,17 +30,17 @@
   programs.zsh.enable = true;
 
   imports = [
-    ./modules/git.nix
-    ./modules/zsh.nix
-    ./modules/shell.nix
-    ./modules/tmux.nix
-    #./modules/nvim.nix
+    /home/mvaldes/git/dotfiles-nix/modules/git.nix
+    /home/mvaldes/git/dotfiles-nix/modules/zsh.nix
+    /home/mvaldes/git/dotfiles-nix/modules/shell.nix
+    /home/mvaldes/git/dotfiles-nix/modules/tmux.nix
   ];
 
   #Pkgs installed via os
   # steam, spotify, discord, i3, rofi, lutris, obs, obsidian
   home.packages = with pkgs; [
     # Utilities
+    neovim
     tldr
     htop
     sox
@@ -66,7 +53,6 @@
     kubectl
     kubernetes-helm
     gh
-    awscli2
     doppler
     ncdu
     nixpkgs-fmt
@@ -77,5 +63,8 @@
     feh
     bat
     wsl-open
+    nodejs_20
+    jdk
+    cargo
   ];
 }
