@@ -36,7 +36,7 @@ in {
 
   system.stateVersion = "24.11"; # Did you read the comment?
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  environment.systemPackages = [unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.gnumake pkgs.clang pkgs.nixd pkgs.alejandra pkgs.openai-whisper];
+  environment.systemPackages = [unstable.neovim pkgs.git pkgs.wget pkgs.unzip pkgs.lua pkgs.gnumake pkgs.clang pkgs.nixd pkgs.alejandra pkgs.openai-whisper pkgs.luarocks pkgs.gcc pkgs.go-task];
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
   users.defaultUserShell = pkgs.zsh;
