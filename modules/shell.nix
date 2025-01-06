@@ -13,6 +13,10 @@
     skins.skin = "nord";
   };
 
+  programs.nnn = {
+    enable = true;
+  };
+
   programs.lazygit = {
     enable = true;
     settings = {
