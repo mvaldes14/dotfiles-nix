@@ -65,6 +65,7 @@
     wsl-open
     nodejs_20
     jdk
+    xclip
     cargo
   ];
 }
