@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  user = builtins.getEnv "USER";
+  user = "mvaldes"; 
   tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "sessionx";
     version = "unstable-2023-01-06";

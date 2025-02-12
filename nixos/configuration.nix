@@ -1,24 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  ...
-}: let
-  unstable = import <nixos-unstable> {};
+
+{ config, pkgs, ... }: let
   home-config = import ./home.nix;
+  unstable = import <nixpkgs-unstable> {};
 in {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    <home-manager/nixos>
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      <home-manager/nixos>
+    ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -61,12 +57,6 @@ in {
     variant = "";
   };
 
-  # i3wm
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    extraPackages = [pkgs.i3status-rust];
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -89,25 +79,30 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Flatpaks (discord, zen, etc)
+  services.flatpak.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mvaldes = {
     isNormalUser = true;
     description = "mvaldes";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 
+  # Home Manager
   home-manager.users.mvaldes = home-config;
+
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "mvaldes";
+  services.displayManager.autoLogin.enable = false;
+  services.displayManager.autoLogin.user = "mvaldes";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -115,19 +110,30 @@ in {
   # Flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    unstable.neovim
     wezterm
     tmux
-    brave
-    rofi
-    picom
-    pasystray
-    gnumake
-    clang
-    fira-code-nerdfont
+    neovim
+    git
+    gh
+    hyprpaper
+    rofi-wayland
+    flatpak
+    unstable.ghostty
+    gcc
+    swaynotificationcenter
+    nwg-look
+  ];
+
+  # Fonts
+  #fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = with pkgs;[
+   nerd-fonts.jetbrains-mono
+   nerd-fonts.hack
+   nerd-fonts.fira-code
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -137,7 +143,6 @@ in {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs.zsh.enable = true;
 
   # List services that you want to enable:
 
@@ -156,8 +161,11 @@ in {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
-  # For VMWare functionality
-  virtualisation.vmware.guest.enable = true;
+  # Programs
+  programs.zsh.enable = true;
+  programs.hyprland.enable = true;
+  programs.waybar.enable = true;
+  programs.hyprlock.enable = true;
 }

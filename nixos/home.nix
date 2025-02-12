@@ -18,6 +18,12 @@
       source = /home/mvaldes/git/dotfiles/.config/wezterm;
       target = "/home/mvaldes/.config/wezterm";
     };
+    ".config/waybar" = {
+      source = /home/mvaldes/git/dotfiles-nix/config/waybar;
+    };
+    ".config/hypr" = {
+      source = /home/mvaldes/git/dotfiles-nix/config/hypr;
+    };
   };
 
   home.sessionVariables = {
@@ -40,32 +46,29 @@
   # steam, spotify, discord, i3, rofi, lutris, obs, obsidian
   home.packages = with pkgs; [
     # Utilities
-    neovim
     tldr
     htop
     sox
     screenkey
-    neofetch
     jq
     tree
     fd
     ripgrep
     kubectl
     kubernetes-helm
-    gh
     doppler
     ncdu
     nixpkgs-fmt
     stern
-    flameshot
     docker-compose
     dig
     feh
     bat
-    wsl-open
-    nodejs_20
-    jdk
-    xclip
-    cargo
+    bitwarden-cli
+    brightnessctl
+    playerctl
+    tokyonight-gtk-theme
+    hyprshot
+    nerdfetch
   ];
 }
