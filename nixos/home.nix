@@ -21,9 +21,6 @@
     ".config/waybar" = {
       source = /home/mvaldes/git/dotfiles-nix/config/waybar;
     };
-    ".config/hypr" = {
-      source = /home/mvaldes/git/dotfiles-nix/config/hypr;
-    };
   };
 
   home.sessionVariables = {
