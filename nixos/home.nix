@@ -67,5 +67,6 @@
     tokyonight-gtk-theme
     hyprshot
     nerdfetch
+    go-task
   ];
 }
