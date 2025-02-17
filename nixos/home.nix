@@ -1,7 +1,8 @@
-{  pkgs, ... }: {
+{  pkgs, config, ... }: {
   home.username = "mvaldes";
   home.homeDirectory = "/home/mvaldes";
   home.stateVersion = "24.05";
+  home.enableNixpkgsReleaseCheck = false;
   home.file = {
     ".ssh/config" = {
       source = /home/mvaldes/git/dotfiles/.ssh/config;
@@ -21,6 +22,7 @@
     ".config/waybar" = {
       source = /home/mvaldes/git/dotfiles-nix/config/waybar;
     };
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/mvaldes/git/dotfiles/.config/nvim";
   };
 
   home.sessionVariables = {
