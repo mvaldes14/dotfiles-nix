@@ -126,6 +126,7 @@ in {
     gcc
     swaynotificationcenter
     nwg-look
+    xclip
   ];
 
   # Fonts
