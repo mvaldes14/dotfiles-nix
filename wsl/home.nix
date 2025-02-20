@@ -2,26 +2,28 @@
   pkgs,
   config,
   ...
-}: {
-  home.username = "nixos";
-  home.homeDirectory = "/home/nixos";
+}: let
+  username = "mvaldes";
+in {
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.05"; # Please read the comment before changing.
   home.enableNixpkgsReleaseCheck = false;
   home.file = {
     ".ssh/config" = {
-      source = /home/nixos/git/dotfiles/.ssh/config;
+      source = /home/${username}/git/dotfiles/.ssh/config;
     };
     ".local/bin" = {
-      source = /home/nixos/git/dotfiles/scripts;
+      source = /home/${username}/git/dotfiles/scripts;
       recursive = true;
     };
     ".aws/config" = {
-      source = /home/nixos/git/dotfiles/.aws/config;
+      source = /home/${username}/git/dotfiles/.aws/config;
     };
     ".config/wezterm" = {
-      source = /home/nixos/git/dotfiles/.config/wezterm;
+      source = /home/${username}/git/dotfiles/.config/wezterm;
     };
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/nixos/git/dotfiles/.config/nvim";
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/mvaldes/git/dotfiles/.config/nvim";
   };
 
   home.sessionVariables = {

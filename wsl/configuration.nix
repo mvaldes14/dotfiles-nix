@@ -14,7 +14,7 @@ in {
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "mvaldes";
   wsl.docker-desktop.enable = true;
   wsl.interop.includePath = true;
   wsl.extraBin = with pkgs; [
@@ -44,5 +44,5 @@ in {
   time.hardwareClockInLocalTime = true;
   nixpkgs.config.allowUnfree = true;
 
-  home-manager.users.nixos = home-config;
+  home-manager.users.mvaldes = home-config;
 }

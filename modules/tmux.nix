@@ -1,5 +1,4 @@
 {pkgs, ...}: let
-  user = "mvaldes"; 
   tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "sessionx";
     version = "unstable-2023-01-06";
@@ -27,7 +26,7 @@ in {
     ];
     extraConfig = ''
       run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
-      ${builtins.readFile /home/${user}/git/dotfiles/.config/tmux/tmux.conf}
+      ${builtins.readFile /home/mvaldes/git/dotfiles/.config/tmux/tmux.conf}
     '';
   };
 }
