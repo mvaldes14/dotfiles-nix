@@ -22,6 +22,7 @@ NixOS & WSL:
 2. Make a link of the files `configuration, home, hardware-configuration, flake, modules, config` to `/etc/nixos/`
     If you are doing NIXOS:
     - `ln -s ~/<path-to-your-repo>/nixos/ /etc/nixos`
+
     If you are doing WSL:
     - `ln -s ~/<path-to-your-repo>/wsl/ /etc/nixos`
 3. Modify the username if desired.
