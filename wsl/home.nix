@@ -1,4 +1,8 @@
-{pkgs, config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "24.05"; # Please read the comment before changing.
@@ -9,7 +13,6 @@
     };
     ".local/bin" = {
       source = /home/nixos/git/dotfiles/scripts;
-      target = "/home/nixos/.local/bin";
       recursive = true;
     };
     ".aws/config" = {
@@ -17,7 +20,6 @@
     };
     ".config/wezterm" = {
       source = /home/nixos/git/dotfiles/.config/wezterm;
-      target = "/home/nixos/.config/wezterm";
     };
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/nixos/git/dotfiles/.config/nvim";
   };

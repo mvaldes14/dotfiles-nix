@@ -5,7 +5,7 @@
 # https://github.com/nix-community/NixOS-WSL
 {pkgs, ...}: let
   unstable = import <nixos-unstable> {};
-  home-config = import ./home-wsl.nix;
+  home-config = import ./home.nix;
 in {
   imports = [
     # include NixOS-WSL modules
