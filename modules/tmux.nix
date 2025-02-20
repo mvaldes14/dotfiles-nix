@@ -27,6 +27,7 @@ in {
     extraConfig = ''
       run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
       ${builtins.readFile /home/mvaldes/git/dotfiles/.config/tmux/tmux.conf}
+      ${builtins.readFile /home/mvaldes/git/dotfiles/.config/tmux/tmuxtheme.conf}
     '';
   };
 }

@@ -6,6 +6,7 @@
 {pkgs, ...}: let
   unstable = import <nixos-unstable> {};
   home-config = import ./home.nix;
+  username = "mvaldes";
 in {
   imports = [
     # include NixOS-WSL modules
@@ -14,7 +15,7 @@ in {
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "mvaldes";
+  wsl.defaultUser = username;
   wsl.docker-desktop.enable = true;
   wsl.interop.includePath = true;
   wsl.extraBin = with pkgs; [
@@ -43,6 +44,5 @@ in {
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
   nixpkgs.config.allowUnfree = true;
-
-  home-manager.users.mvaldes = home-config;
+  home-manager.users."${username}" = home-config;
 }
