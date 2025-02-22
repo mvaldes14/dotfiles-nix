@@ -1,28 +1,31 @@
-{  pkgs, config, ... }: {
-  home.username = "mvaldes";
-  home.homeDirectory = "/home/mvaldes";
+{  pkgs, config, ... }: let
+  username = "mvaldes";
+in {
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.05";
   home.enableNixpkgsReleaseCheck = false;
   home.file = {
     ".ssh/config" = {
-      source = /home/mvaldes/git/dotfiles/.ssh/config;
+      source = /home/${username}/git/dotfiles/.ssh/config;
     };
     ".local/bin" = {
-      source = /home/mvaldes/git/dotfiles/scripts;
-      target = "/home/mvaldes/.local/bin";
+      source = /home/${username}/git/dotfiles/scripts;
+      target = "/home/${username}/.local/bin";
       recursive = true;
     };
     ".aws/config" = {
-      source = /home/mvaldes/git/dotfiles/.aws/config;
+      source = /home/${username}/git/dotfiles/.aws/config;
     };
     ".config/wezterm" = {
-      source = /home/mvaldes/git/dotfiles/.config/wezterm;
-      target = "/home/mvaldes/.config/wezterm";
+      source = /home/${username}/git/dotfiles/.config/wezterm;
+      target = "/home/${username}/.config/wezterm";
     };
     ".config/waybar" = {
-      source = /home/mvaldes/git/dotfiles-nix/config/waybar;
+      source = /home/${username}/git/dotfiles-nix/config/waybar;
     };
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/mvaldes/git/dotfiles/.config/nvim";
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/git/dotfiles/.config/nvim";
+    ".config/ghostty/config".source = /home/${username}/git/dotfiles/.config/ghostty/config;
   };
 
   home.sessionVariables = {
@@ -35,10 +38,10 @@
   programs.zsh.enable = true;
 
   imports = [
-    /home/mvaldes/git/dotfiles-nix/modules/git.nix
-    /home/mvaldes/git/dotfiles-nix/modules/zsh.nix
-    /home/mvaldes/git/dotfiles-nix/modules/shell.nix
-    /home/mvaldes/git/dotfiles-nix/modules/tmux.nix
+    /home/${username}/git/dotfiles-nix/modules/git.nix
+    /home/${username}/git/dotfiles-nix/modules/zsh.nix
+    /home/${username}/git/dotfiles-nix/modules/shell.nix
+    /home/${username}/git/dotfiles-nix/modules/tmux.nix
   ];
 
   #Pkgs installed via os
