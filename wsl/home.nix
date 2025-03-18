@@ -69,5 +69,9 @@ in {
     nodejs_20
     jdk
     cargo
+
+    # lsp
+    marksman
+    ltex-ls
   ];
 }
