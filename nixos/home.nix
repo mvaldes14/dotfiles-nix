@@ -77,5 +77,14 @@ in {
     hyprshot
     nerdfetch
     go-task
+    
+    # languages
+    nodejs_20
+    jdk
+    cargo
+
+    # lsp
+    marksman
+    ltex-ls
   ];
 }
