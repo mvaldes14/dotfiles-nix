@@ -1,16 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   home-config = import ./home.nix;
   unstable = import <nixpkgs-unstable> {};
 in {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -63,6 +66,7 @@ in {
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.sudo.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -86,7 +90,7 @@ in {
   users.users.mvaldes = {
     isNormalUser = true;
     description = "mvaldes";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
 
@@ -110,7 +114,6 @@ in {
   # Flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -131,10 +134,10 @@ in {
 
   # Fonts
   #fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
-  fonts.packages = with pkgs;[
-   nerd-fonts.jetbrains-mono
-   nerd-fonts.hack
-   nerd-fonts.fira-code
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.hack
+    nerd-fonts.fira-code
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
