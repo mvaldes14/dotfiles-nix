@@ -56,12 +56,17 @@ in {
     ".config/wezterm" = {
       source = "${homePath}/git/dotfiles/.config/wezterm";
     };
+    ".config/ghostty" = {
+      source = "${homePath}/git/dotfiles/.config/ghostty";
+    };
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/git/dotfiles/.config/nvim";
   };
 
   home.sessionVariables = {
     EDITOR = "nvim";
     PATH = "$PATH:$HOME/.local/bin";
+    LC_ALL = "en_US.UTF-8";
+    LANG = "en_US.UTF-8";
   };
 
   programs.home-manager.enable = true;
