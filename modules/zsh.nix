@@ -16,7 +16,7 @@
     initExtra = ''
       source $HOME/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
       source $HOME/git/dotfiles/.config/zsh/zsh_functions
-      export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
+      # export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
     '';
     shellAliases = {
       cd = "z";
@@ -47,7 +47,6 @@
       plugins = ["git" "aws" "vi-mode" "kubectl" "fzf"];
     };
     sessionVariables = {
-      # TERM = "screen-256color";
       EDITOR = "nvim";
       XDG_CONFIG_HOME = "$HOME/.config";
       DOTFILES = "$HOME/git/dotfiles/";

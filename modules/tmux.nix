@@ -15,8 +15,6 @@ in {
   programs.tmux = {
     enable = true;
     plugins = with pkgs.tmuxPlugins; [
-      sensible
-      mode-indicator
       resurrect
       yank
       vim-tmux-navigator

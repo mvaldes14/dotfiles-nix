@@ -69,7 +69,6 @@ in {
   };
 
   programs.home-manager.enable = true;
-  # programs.zsh.enable = true;
 
   imports = [
     "${homePath}/git/dotfiles-nix/modules/git.nix"
