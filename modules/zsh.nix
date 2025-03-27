@@ -47,10 +47,9 @@
       plugins = ["git" "aws" "vi-mode" "kubectl" "fzf"];
     };
     sessionVariables = {
-      TERM = "screen-256color";
+      # TERM = "screen-256color";
       EDITOR = "nvim";
       XDG_CONFIG_HOME = "$HOME/.config";
-      LC_ALL = "C.UTF-8";
       DOTFILES = "$HOME/git/dotfiles/";
     };
     plugins = [

@@ -65,12 +65,11 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     PATH = "$PATH:$HOME/.local/bin";
-    LC_ALL = "en_US.UTF-8";
     LANG = "en_US.UTF-8";
   };
 
   programs.home-manager.enable = true;
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   imports = [
     "${homePath}/git/dotfiles-nix/modules/git.nix"
