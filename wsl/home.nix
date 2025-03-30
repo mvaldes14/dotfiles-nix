@@ -4,6 +4,7 @@
   ...
 }: let
   username = "mvaldes";
+  homePath = "/home/${username}";
 in {
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -36,10 +37,10 @@ in {
   programs.zsh.enable = true;
 
   imports = [
-    /etc/nixos/modules/git.nix
-    /etc/nixos/modules/zsh.nix
-    /etc/nixos/modules/shell.nix
-    /etc/nixos/modules/tmux.nix
+    "${homePath}/git/dotfiles-nix/modules/git.nix"
+    "${homePath}/git/dotfiles-nix/modules/zsh.nix"
+    "${homePath}/git/dotfiles-nix/modules/shell.nix"
+    "${homePath}/git/dotfiles-nix/modules/tmux.nix"
   ];
 
   #Pkgs installed via os

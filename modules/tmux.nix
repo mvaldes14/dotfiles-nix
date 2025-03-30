@@ -11,6 +11,11 @@
         sha256 = "sha256-TO5OG7lqcN2sKRtdF7DgFeZ2wx9O1FVh1MSp+6EoYxc=";
       };
   };
+  isMac = pkgs.stdenv.isDarwin;
+  homeDir =
+    if isMac
+    then "/Users/mvaldes"
+    else "/home/mvaldes";
 in {
   programs.tmux = {
     enable = true;
@@ -23,9 +28,8 @@ in {
       tmux-sessionx
     ];
     extraConfig = ''
-      run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
-      ${builtins.readFile /Users/mvaldes/git/dotfiles/.config/tmux/tmux.conf}
-      ${builtins.readFile /Users/mvaldes/git/dotfiles/.config/tmux/tmuxtheme.conf}
+      ${builtins.readFile "${homeDir}/git/dotfiles/.config/tmux/tmux.conf"}
+      ${builtins.readFile "${homeDir}/git/dotfiles/.config/tmux/tmuxtheme.conf"}
     '';
   };
 }
