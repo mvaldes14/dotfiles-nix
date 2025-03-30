@@ -30,6 +30,7 @@ in {
     glow
     dig
     alejandra
+    aerospace
 
     # languages
     nodejs_20
