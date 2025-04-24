@@ -4,6 +4,7 @@
   ...
 }: let
   username = "mvaldes";
+  unstable = import <nixpkgs-unstable> {};
   homePath = "/Users/${username}";
 in {
   home.username = "mvaldes";
@@ -13,7 +14,7 @@ in {
 
   home.packages = with pkgs; [
     # Utilities
-    neovim
+    unstable.neovim
     tldr
     htop
     jq
