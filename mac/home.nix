@@ -60,6 +60,9 @@ in {
     ".config/ghostty" = {
       source = "${homePath}/git/dotfiles/.config/ghostty";
     };
+    ".config/aerospace" = {
+      source = "${homePath}/git/dotfiles/.config/aerospace";
+    };
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/git/dotfiles/.config/nvim";
   };
 
