@@ -19,13 +19,10 @@
       # export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
     '';
     shellAliases = {
+      n = "nnn";
       cd = "z";
       cat = "bat";
       lg = "lazygit";
-      kls = "kitchen list";
-      krm = "kitchen destroy";
-      kmk = "kitchen converge";
-      be = "bundle exec";
       s = "doppler run";
       tf = "terraform";
       k = "kubectl";
@@ -35,8 +32,8 @@
       tmks = "~/.local/bin/tmux-sessionkiller.sh";
       tmkw = "~/.local/bin/tmux-windowkiller.sh";
       dot = "cd $DOTFILES";
-      v = "doppler setup -p homelab >/dev/null && doppler run -- nvim";
-      vwiki = "pushd /mnt/c/Users/migue/Documents/wiki && nvim";
+      v = "nvim";
+      vwiki = "pushd ~/Obsidian/wiki && nvim";
       kk = "k9s";
       ollama = "ollama.exe";
       snt = "sudo nixos-switch test --impure";
