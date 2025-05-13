@@ -51,6 +51,7 @@ in {
     pkgs.luarocks
     pkgs.gcc
     pkgs.go-task
+    pkgs.bitwarden-cli
   ];
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
