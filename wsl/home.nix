@@ -5,6 +5,7 @@
 }: let
   username = "mvaldes";
   homePath = "/home/${username}";
+  unstable = import <nixos-unstable> {inherit pkgs;};
 in {
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -67,7 +68,7 @@ in {
     wsl-open
 
     # languages
-    nodejs_20
+    nodejs_22
     jdk
     cargo
 
