@@ -69,7 +69,7 @@ in {
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PATH = "$PATH:$HOME/.local/bin";
+    PATH = "$PATH:$HOME/.local/bin:$HOME/.vorpal/bin";
     LANG = "en_US.UTF-8";
   };
 

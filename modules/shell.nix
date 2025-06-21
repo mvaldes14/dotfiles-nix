@@ -77,28 +77,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      add_newline = false;
-      format = lib.concatStrings [
-        "$hostname"
-        "$directory"
-        "$git_branch"
-        "$git_state"
-        "$git_status"
-        "$kubernetes"
-        "$helm"
-        "$cmd_duration"
-        "$fill"
-        "$terraform"
-        "$pulumi"
-        "$golang"
-        "$nodejs"
-        "$rust"
-        "$lua"
-        "$ocaml"
-        "$aws"
-        "nix_shell"
-        "\n$character"
-      ];
+      add_newline = true;
       character = {
         success_symbol = "[➜](bold green) ";
         error_symbol = "[✗](bold red) ";
@@ -106,29 +85,21 @@
       fill.symbol = " ";
       terraform = {
         format = "[💠 $version]($style) ";
-        disabled = false;
-        detect_folders = [".terraform"];
       };
       golang = {
-        symbol = " ";
-        format = "[$symbol($version )]($style)";
+        format = "[ $version](bold blue)";
       };
       nodejs = {
-        format = "[$version](bold green) ";
+        format = "[ $version](bold green) ";
       };
       rust = {
         format = "[⚙️$version](red bold)";
       };
-      ocaml = {
-        format = "[🐫 $version](bold yellow) ";
-        detect_files = ["dune"];
-      };
       lua = {
         format = "[🌙 $version](bold white) ";
-        detect_files = ["lua"];
       };
       nix_shell = {
-        format = "[❄️ $name](bold white) ";
+        format = "[❄️ $version](bold white) ";
       };
     };
   };
