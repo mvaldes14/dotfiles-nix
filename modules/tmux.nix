@@ -14,8 +14,8 @@ in {
       copycat
       continuum
       tmux-sessionx
-      tmux-thumbs
       tmux-sessionx
+      fingers
     ];
     extraConfig = ''
       ${builtins.readFile "${homeDir}/git/dotfiles/.config/tmux/tmux.conf"}
