@@ -32,6 +32,7 @@ in {
     dig
     alejandra
     aerospace
+    flameshot
 
     # languages
     nodejs_20
