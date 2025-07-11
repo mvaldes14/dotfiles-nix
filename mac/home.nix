@@ -33,6 +33,7 @@ in {
     alejandra
     aerospace
     flameshot
+    pnpm
 
     # languages
     nodejs_20
