@@ -34,6 +34,8 @@ in {
     aerospace
     flameshot
     pnpm
+    devbox
+    go-task
 
     # languages
     nodejs_20
@@ -65,6 +67,9 @@ in {
     };
     ".config/aerospace" = {
       source = "${homePath}/git/dotfiles/.config/aerospace";
+    };
+    ".config/direnv/direnv.toml" = {
+      source = "${homePath}/git/dotfiles/.config/direnv/direnv.toml";
     };
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/git/dotfiles/.config/nvim";
   };
