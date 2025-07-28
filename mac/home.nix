@@ -36,6 +36,7 @@ in {
     pnpm
     devbox
     go-task
+    k9s
 
     # languages
     nodejs_20
