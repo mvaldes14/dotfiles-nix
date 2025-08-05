@@ -72,12 +72,15 @@ in {
     ".config/direnv/direnv.toml" = {
       source = "${homePath}/git/dotfiles/.config/direnv/direnv.toml";
     };
+    ".config/opencode/opencode.json" = {
+      source = "${homePath}/git/dotfiles/.config/opencode/opencode.json";
+    };
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/git/dotfiles/.config/nvim";
   };
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PATH = "$PATH:$HOME/.local/bin:$HOME/.vorpal/bin";
+    PATH = "$PATH:$HOME/.local/bin:$HOME/.vorpal/bin;/$HOME/.opencode/bin";
     LANG = "en_US.UTF-8";
   };
 
