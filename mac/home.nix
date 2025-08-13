@@ -32,7 +32,6 @@ in {
     dig
     alejandra
     aerospace
-    flameshot
     pnpm
     devbox
     go-task
