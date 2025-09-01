@@ -5,7 +5,6 @@
 }: let
   username = "mvaldes";
   homePath = "/home/${username}";
-  unstable = import <nixos-unstable> {inherit pkgs;};
 in {
   home.username = username;
   home.homeDirectory = "/home/${username}";

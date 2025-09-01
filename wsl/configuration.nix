@@ -39,6 +39,7 @@ in {
   nix.settings.experimental-features = ["nix-command" "flakes"];
   environment.systemPackages = [
     unstable.neovim
+    unstable.opencode
     pkgs.git
     pkgs.wget
     pkgs.unzip
