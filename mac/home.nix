@@ -59,9 +59,6 @@ in {
     ".aws/config" = {
       source = "${homePath}/git/dotfiles/.aws/config";
     };
-    ".config/wezterm" = {
-      source = "${homePath}/git/dotfiles/.config/wezterm";
-    };
     ".config/ghostty" = {
       source = "${homePath}/git/dotfiles/.config/ghostty";
     };

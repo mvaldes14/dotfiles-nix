@@ -39,7 +39,6 @@ in {
   nix.settings.experimental-features = ["nix-command" "flakes"];
   environment.systemPackages = [
     unstable.neovim
-    unstable.opencode
     pkgs.git
     pkgs.wget
     pkgs.unzip
@@ -53,6 +52,7 @@ in {
     pkgs.gcc
     pkgs.go-task
     pkgs.bitwarden-cli
+    pkgs.devbox
   ];
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;

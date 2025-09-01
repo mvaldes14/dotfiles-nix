@@ -21,8 +21,11 @@ in {
     ".aws/config" = {
       source = /home/${username}/git/dotfiles/.aws/config;
     };
-    ".config/wezterm" = {
-      source = /home/${username}/git/dotfiles/.config/wezterm;
+    ".config/direnv/direnv.toml" = {
+      source = "${homePath}/git/dotfiles/.config/direnv/direnv.toml";
+    };
+    ".config/opencode/opencode.json" = {
+      source = "${homePath}/git/dotfiles/.config/opencode/opencode.json";
     };
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/mvaldes/git/dotfiles/.config/nvim";
   };
@@ -30,7 +33,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     LC_ALL = "C.UTF-8";
-    PATH = "$PATH:$HOME/.local/bin";
+    PATH = "$PATH:$HOME/.local/bin:$HOME/.opencode/bin";
   };
 
   programs.home-manager.enable = true;
