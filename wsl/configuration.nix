@@ -56,6 +56,7 @@ in {
   ];
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
+  programs.ssh.startAgent = true;
   users.defaultUserShell = pkgs.zsh;
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
