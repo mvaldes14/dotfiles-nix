@@ -68,6 +68,7 @@ in {
     glow
     dig
     wsl-open
+    httpie
 
     # languages
     nodejs_22
