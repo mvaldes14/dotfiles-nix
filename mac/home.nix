@@ -38,7 +38,7 @@ in {
     k9s
 
     # languages
-    nodejs_20
+    nodejs_22
     jdk
     cargo
     lua
