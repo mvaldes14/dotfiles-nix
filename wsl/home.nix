@@ -12,14 +12,14 @@ in {
   home.enableNixpkgsReleaseCheck = false;
   home.file = {
     ".ssh/config" = {
-      source = /home/${username}/git/dotfiles/.ssh/config;
+      source = "${homePath}/git/dotfiles/.ssh/config";
     };
     ".local/bin" = {
-      source = /home/${username}/git/dotfiles/scripts;
+      source = "${homePath}/git/dotfiles/scripts";
       recursive = true;
     };
     ".aws/config" = {
-      source = /home/${username}/git/dotfiles/.aws/config;
+      source = "${homePath}/git/dotfiles/.aws/config";
     };
     ".config/direnv/direnv.toml" = {
       source = "${homePath}/git/dotfiles/.config/direnv/direnv.toml";
@@ -27,7 +27,7 @@ in {
     ".config/opencode/opencode.json" = {
       source = "${homePath}/git/dotfiles/.config/opencode/opencode.json";
     };
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/mvaldes/git/dotfiles/.config/nvim";
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/git/dotfiles/.config/nvim";
   };
 
   home.sessionVariables = {
