@@ -17,10 +17,11 @@ in {
       tmux-sessionx
       fingers
       tmux-fzf
+      tokyo-night-tmux
     ];
+    # ${builtins.readFile "${homeDir}/git/dotfiles/.config/tmux/tmuxtheme.conf"}
     extraConfig = ''
       ${builtins.readFile "${homeDir}/git/dotfiles/.config/tmux/tmux.conf"}
-      ${builtins.readFile "${homeDir}/git/dotfiles/.config/tmux/tmuxtheme.conf"}
       bind s run-shell "${pkgs.tmuxPlugins.tmux-fzf}/share/tmux-plugins/tmux-fzf/scripts/session.sh switch"
     '';
   };
