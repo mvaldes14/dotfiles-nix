@@ -7,6 +7,7 @@
   unstable = import <nixpkgs-unstable> {};
   homePath = "/Users/${username}";
 in {
+  nixpkgs.config.allowUnfree = true;
   home.username = "mvaldes";
   home.homeDirectory = "/Users/mvaldes";
 
@@ -36,6 +37,8 @@ in {
     devbox
     go-task
     k9s
+    claude-code
+    opencode
 
     # languages
     nodejs_22

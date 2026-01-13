@@ -13,7 +13,7 @@
     enableCompletion = true;
     dotDir = ".config/zsh";
     syntaxHighlighting.enable = true;
-    initContent = ''
+    initExtra = ''
       source $HOME/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
       source $HOME/git/dotfiles/.config/zsh/zsh_functions
       # export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')

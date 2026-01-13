@@ -18,6 +18,14 @@ in {
   wsl.defaultUser = username;
   wsl.docker-desktop.enable = true;
   wsl.interop.includePath = true;
+
+  # Define a user account with explicit UID to match the current system
+  users.users.${username} = {
+    uid = 1001;
+    isNormalUser = true;
+    home = "/home/${username}";
+    extraGroups = ["wheel"];
+  };
   wsl.extraBin = with pkgs; [
     # Binaries for Docker Desktop wsl-distro-proxy
     {src = "${coreutils}/bin/mkdir";}
@@ -39,6 +47,7 @@ in {
   nix.settings.experimental-features = ["nix-command" "flakes"];
   environment.systemPackages = [
     unstable.neovim
+    unstable.opencode
     pkgs.git
     pkgs.wget
     pkgs.unzip

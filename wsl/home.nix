@@ -5,7 +5,9 @@
 }: let
   username = "mvaldes";
   homePath = "/home/${username}";
+  unstable = import <nixos-unstable> {};
 in {
+  nixpkgs.config.allowUnfree = true;
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.05"; # Please read the comment before changing.
@@ -33,7 +35,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     LC_ALL = "C.UTF-8";
-    PATH = "$PATH:$HOME/.local/bin:$HOME/.opencode/bin";
+    PATH = "$PATH:$HOME/.local/bin";
   };
 
   programs.home-manager.enable = true;
@@ -69,6 +71,8 @@ in {
     dig
     wsl-open
     httpie
+    claude-code
+    unstable.opencode
 
     # languages
     nodejs_22
