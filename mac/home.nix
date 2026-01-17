@@ -5,10 +5,11 @@
 }: let
   username = "mvaldes";
   homePath = "/Users/${username}";
+  dotfilesPath = "${homePath}/git/dotfiles";
+  mkSymlink = path: config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${path}";
 in {
-  nixpkgs.config.allowUnfree = true;
-  home.username = "mvaldes";
-  home.homeDirectory = "/Users/mvaldes";
+  home.username = username;
+  home.homeDirectory = homePath;
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
@@ -51,36 +52,26 @@ in {
   ];
 
   home.file = {
-    ".ssh/config" = {
-      source = "${homePath}/git/dotfiles/.ssh/config";
-    };
-    ".local/bin" = {
-      source = "${homePath}/git/dotfiles/scripts";
-      recursive = true;
-    };
-    ".aws/config" = {
-      source = "${homePath}/git/dotfiles/.aws/config";
-    };
-    ".config/ghostty" = {
-      source = "${homePath}/git/dotfiles/.config/ghostty";
-    };
-    ".config/aerospace" = {
-      source = "${homePath}/git/dotfiles/.config/aerospace";
-    };
-    ".config/direnv/direnv.toml" = {
-      source = "${homePath}/git/dotfiles/.config/direnv/direnv.toml";
-    };
-    ".config/opencode/opencode.json" = {
-      source = "${homePath}/git/dotfiles/.config/opencode/opencode.json";
-    };
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/git/dotfiles/.config/nvim";
+    ".ssh/config".source = mkSymlink ".ssh/config";
+    ".local/bin".source = mkSymlink "scripts";
+    ".aws/config".source = mkSymlink ".aws/config";
+    ".config/ghostty".source = mkSymlink ".config/ghostty";
+    ".config/aerospace".source = mkSymlink ".config/aerospace";
+    ".config/direnv/direnv.toml".source = mkSymlink ".config/direnv/direnv.toml";
+    ".config/opencode/opencode.json".source = mkSymlink ".config/opencode/opencode.json";
+    ".config/nvim".source = mkSymlink ".config/nvim";
   };
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PATH = "$HOME/.local/bin:$HOME/.vorpal/bin:$HOME/.opencode/bin:$PATH";
     LANG = "en_US.UTF-8";
   };
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.vorpal/bin"
+    "$HOME/.opencode/bin"
+  ];
 
   programs.home-manager.enable = true;
 

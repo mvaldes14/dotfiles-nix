@@ -82,13 +82,13 @@ Unified flake-based Nix configuration for macOS (home-manager only), NixOS, and 
 ```bash
 # Update configuration
 cd ~/git/dotfiles-nix
-home-manager switch --flake .#"mvaldes@mac"
+home-manager switch --flake ".#mvaldes@mac" --impure
 
 # Update flake inputs
 nix flake update
 
 # Check what will change
-home-manager build --flake .#"mvaldes@mac"
+home-manager build --flake ".#mvaldes@mac"
 ```
 
 ### NixOS
