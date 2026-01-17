@@ -7,12 +7,10 @@
   ...
 }: let
   home-config = import ./home.nix;
-  unstable = import <nixpkgs-unstable> {};
 in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    <home-manager/nixos>
   ];
 
   # Bootloader.
@@ -125,7 +123,7 @@ in {
     hyprpaper
     rofi-wayland
     flatpak
-    unstable.ghostty
+    ghostty
     gcc
     swaynotificationcenter
     nwg-look

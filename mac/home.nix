@@ -4,7 +4,6 @@
   ...
 }: let
   username = "mvaldes";
-  unstable = import <nixpkgs-unstable> {};
   homePath = "/Users/${username}";
 in {
   nixpkgs.config.allowUnfree = true;
@@ -15,7 +14,7 @@ in {
 
   home.packages = with pkgs; [
     # Utilities
-    unstable.neovim
+    neovim
     tldr
     htop
     jq
@@ -37,8 +36,8 @@ in {
     devbox
     go-task
     k9s
-    unstable.claude-code
-    unstable.opencode
+    claude-code
+    opencode
 
     # languages
     nodejs_22
@@ -86,9 +85,9 @@ in {
   programs.home-manager.enable = true;
 
   imports = [
-    "${homePath}/git/dotfiles-nix/modules/git.nix"
-    "${homePath}/git/dotfiles-nix/modules/zsh.nix"
-    "${homePath}/git/dotfiles-nix/modules/shell.nix"
-    "${homePath}/git/dotfiles-nix/modules/tmux.nix"
+    ../modules/git.nix
+    ../modules/zsh.nix
+    ../modules/shell.nix
+    ../modules/tmux.nix
   ];
 }

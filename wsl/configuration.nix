@@ -4,14 +4,11 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 {pkgs, ...}: let
-  unstable = import <nixos-unstable> {};
   home-config = import ./home.nix;
   username = "mvaldes";
 in {
   imports = [
-    # include NixOS-WSL modules
-    <nixos-wsl/modules>
-    <home-manager/nixos>
+    # NixOS-WSL modules are now imported via flake
   ];
 
   wsl.enable = true;
@@ -45,23 +42,23 @@ in {
 
   system.stateVersion = "25.05"; # Did you read the comment?
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  environment.systemPackages = [
-    unstable.neovim
-    unstable.opencode
-    pkgs.git
-    pkgs.wget
-    pkgs.unzip
-    pkgs.lua
-    pkgs.gnumake
-    pkgs.clang
-    pkgs.nixd
-    pkgs.alejandra
-    pkgs.openai-whisper
-    pkgs.luarocks
-    pkgs.gcc
-    pkgs.go-task
-    pkgs.bitwarden-cli
-    pkgs.devbox
+  environment.systemPackages = with pkgs; [
+    neovim
+    opencode
+    git
+    wget
+    unzip
+    lua
+    gnumake
+    clang
+    nixd
+    alejandra
+    openai-whisper
+    luarocks
+    gcc
+    go-task
+    bitwarden-cli
+    devbox
   ];
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
