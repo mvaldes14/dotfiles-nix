@@ -11,7 +11,7 @@ in {
   home.username = "mvaldes";
   home.homeDirectory = "/Users/mvaldes";
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
     # Utilities
@@ -37,8 +37,8 @@ in {
     devbox
     go-task
     k9s
-    claude-code
-    opencode
+    unstable.claude-code
+    unstable.opencode
 
     # languages
     nodejs_22
