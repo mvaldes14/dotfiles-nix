@@ -29,10 +29,8 @@ in {
     doppler
     ncdu
     stern
-    glow
     dig
     alejandra
-    aerospace
     pnpm
     devbox
     go-task
@@ -42,13 +40,9 @@ in {
 
     # languages
     nodejs_22
-    jdk
     cargo
     lua
 
-    # lsp
-    marksman
-    ltex-ls
   ];
 
   home.file = {
