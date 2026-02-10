@@ -29,12 +29,6 @@
         defaultFgColor = ["#cdd6f4"];
         searchingActiveBorderColor = ["#f9e2af"];
       };
-      git = {
-        paging = {
-          colorArg = "always";
-          useConfig = false;
-        };
-      };
     };
   };
 
