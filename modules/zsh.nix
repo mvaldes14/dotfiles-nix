@@ -204,10 +204,10 @@
       DOTFILES = "$HOME/git/dotfiles";
       ZSH = "${pkgs.oh-my-zsh}/share/oh-my-zsh";
       CLAUDE_CODE_ENABLE_TELEMETRY = 1;
-      OTEL_METRICS_EXPORTER = otlp;
-      OTEL_LOGS_EXPORTER = otlp;
-      OTEL_EXPORTER_OTLP_PROTOCOL = http/json;
-      OTEL_EXPORTER_OTLP_ENDPOINT = http://otel.local.net;
+      OTEL_METRICS_EXPORTER = "otlp";
+      OTEL_LOGS_EXPORTER = "otlp";
+      OTEL_EXPORTER_OTLP_PROTOCOL = "http/json";
+      OTEL_EXPORTER_OTLP_ENDPOINT = "http://otel.local.net";
     };
 
     plugins = [
