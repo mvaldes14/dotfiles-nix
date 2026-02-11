@@ -1,4 +1,8 @@
-{pkgs, config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -139,12 +143,14 @@
       addToPath $HOME/.local/bin
       addToPath $HOME/go/bin
       addToPath /opt/homebrew/bin
+      addToPath /Applications/Obsidian.app/Contents/MacOS/
     '';
 
     shellAliases = {
       # Editor
       v = "nvim";
       vwiki = "pushd ~/Obsidian/wiki && nvim";
+      obs = "obsidian";
 
       # Navigation
       cd = "z";
