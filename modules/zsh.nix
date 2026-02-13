@@ -160,7 +160,6 @@
       # Tools
       n = "nnn";
       cat = "bat";
-      lg = "lazygit";
       kk = "k9s";
       du = "ncdu";
 
