@@ -53,6 +53,10 @@ in {
     ".config/direnv/direnv.toml".source = mkSymlink ".config/direnv/direnv.toml";
     ".config/opencode/opencode.json".source = mkSymlink ".config/opencode/opencode.json";
     ".config/nvim".source = mkSymlink ".config/nvim";
+    ".claude/settings.json".source = mkSymlink "claude/settings.json";
+    ".claude/skills".source = mkSymlink "claude/skills";
+    ".claude/commands".source = mkSymlink "claude/commands";
+    ".claude/agents".source = mkSymlink "claude/agents";
   };
 
   home.sessionPath = [

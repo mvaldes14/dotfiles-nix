@@ -42,6 +42,7 @@
       export OTEL_EXPORTER_OTLP_PROTOCOL="http/json"
       export OTEL_LOGS_EXPORTER="otlp"
       export OTEL_METRICS_EXPORTER="otlp"
+      export CLAUDE_CODE_ENABLE_TELEMETRY = 1
 
       # Zsh options from zsh_options
       setopt AUTO_LIST
@@ -208,7 +209,6 @@
       XDG_CONFIG_HOME = "$HOME/.config";
       DOTFILES = "$HOME/git/dotfiles";
       ZSH = "${pkgs.oh-my-zsh}/share/oh-my-zsh";
-      CLAUDE_CODE_ENABLE_TELEMETRY = 1;
     };
 
     plugins = [
