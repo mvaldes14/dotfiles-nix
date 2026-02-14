@@ -19,7 +19,7 @@ in {
       vim-tmux-navigator
       copycat
       continuum
-      fingers
+      # fingers  # Commented out - requires Crystal which needs LLVM 22.1.0-rc2 (fails on Mac)
       tmux-fzf
       tokyo-night-tmux
     ];
@@ -169,9 +169,9 @@ in {
       # vim-tmux-navigator
       bind C-l send-keys 'C-l'
 
-      # tmux-fingers
-      set -g @fingers-key S
-      set -g @fingers-keyboard-layout "qwerty-homerow"
+      # tmux-fingers (plugin commented out)
+      # set -g @fingers-key S
+      # set -g @fingers-keyboard-layout "qwerty-homerow"
 
       # tmux-continuum / tmux-resurrect
       set -g @continuum-restore 'on'

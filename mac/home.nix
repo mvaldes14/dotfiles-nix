@@ -42,7 +42,6 @@ in {
     nodejs_22
     cargo
     lua
-
   ];
 
   home.file = {
@@ -54,11 +53,6 @@ in {
     ".config/direnv/direnv.toml".source = mkSymlink ".config/direnv/direnv.toml";
     ".config/opencode/opencode.json".source = mkSymlink ".config/opencode/opencode.json";
     ".config/nvim".source = mkSymlink ".config/nvim";
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    LANG = "en_US.UTF-8";
   };
 
   home.sessionPath = [
