@@ -22,6 +22,7 @@ in {
   };
 
   home.packages = with pkgs; [
+    bash
     tldr
     htop
     jq
