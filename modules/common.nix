@@ -19,6 +19,7 @@ in {
     ".claude/skills".source = mkSymlink "claude/skills";
     ".claude/commands".source = mkSymlink "claude/commands";
     ".claude/agents".source = mkSymlink "claude/agents";
+    ".claude/CLAUDE.md".source = mkSymlink "claude/CLAUDE.md";
   };
 
   home.packages = with pkgs; [
