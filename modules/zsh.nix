@@ -169,9 +169,9 @@
       cat = "bat";
       kk = "k9s";
       du = "ncdu";
+      cc = "claude";
 
       # CLI shortcuts
-      s = "doppler run";
       tf = "terraform";
       k = "kubectl";
       pip = "pip3";
@@ -192,7 +192,6 @@
 
       # Misc
       weather = "curl 'wttr.in/55318?m'";
-      smsg = "git diff --staged | opencode run 'Generate a concise and imperative Git commit message do not include any reference to opencode, do not explain it' | git commit -F -";
     };
 
     oh-my-zsh = {
